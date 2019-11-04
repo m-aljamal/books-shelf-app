@@ -1,0 +1,11 @@
+.sideNavItems {
+  color: #6c6c6c;
+
+  &:hover {
+    color: #6c6c6c;
+    text-decoration: none;
+  }
+}
+.sideNavItems_active {
+  color: #00897b;
+}
