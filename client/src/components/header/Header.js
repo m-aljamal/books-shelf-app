@@ -9,10 +9,8 @@ import SideNavItems from "./SideNavItems";
 import MenuBookIcon from "@material-ui/icons/MenuBook";
 import { Link } from "react-router-dom";
 import Navs from "./Navs";
+
 const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1
-  },
   menuButton: {
     display: "none",
     marginRight: theme.spacing(2),
@@ -20,19 +18,16 @@ const useStyles = makeStyles(theme => ({
       display: "block"
     }
   },
-  title: {
-    flexGrow: 1
-  },
   list: {
     width: 250
   },
-  fullList: {
-    width: "auto"
-  },
+
   navs: {
     display: "flex",
     alignItems: "center",
-    width: "100%",
+    width: "85%",
+    marginRight: "auto",
+    marginLeft: "auto",
     justifyContent: "space-between",
     [theme.breakpoints.down("sm")]: {
       display: "none"
@@ -42,8 +37,11 @@ const useStyles = makeStyles(theme => ({
     display: "none",
     [theme.breakpoints.down("sm")]: {
       display: "flex",
-      width: "100%",
-      justifyContent: "space-evenly"
+      marginRight: "auto",
+      marginLeft: "auto",
+      width: "85%",
+      justifyContent: "space-between",
+      alignItems: "center"
     }
   }
 }));
@@ -74,22 +72,23 @@ export default function Header() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{backgroundColor: '#00897b'}}>
+      <AppBar position="static" style={{ backgroundColor: "#00897b" }}>
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-            onClick={toggleDrawer(true)}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Drawer open={openDrawer} onClose={toggleDrawer(false)}>
-            {sideList()}
-          </Drawer>
-          {/* Navs */}
           <div className={classes.smallHeader}>
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="menu"
+              onClick={toggleDrawer(true)}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Drawer open={openDrawer} onClose={toggleDrawer(false)}>
+              {sideList()}
+            </Drawer>
+            {/* Navs */}
+            {/* <div className={classes.smallHeader}> */}
             <h4>The Book Shelf </h4>
             <Link to="/">
               <MenuBookIcon style={{ color: "white" }} />
@@ -100,7 +99,6 @@ export default function Header() {
             <Link to="/">
               <MenuBookIcon style={{ color: "white" }} />
             </Link>
-
             <Navs />
           </div>
         </Toolbar>

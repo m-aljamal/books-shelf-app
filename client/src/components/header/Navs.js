@@ -4,21 +4,33 @@ import data from "./headerData";
 import { Link, NavLink } from "react-router-dom";
 import "./Navs.scss";
 import IconButton from "@material-ui/core/IconButton";
+import { connect } from "react-redux";
 
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 
 import AccountCircle from "@material-ui/icons/AccountCircle";
-function Navs() {
+function Navs({ user }) {
   const element = (item, i) => (
-    <NavLink  key={i} exact activeClassName="active" className='NavLinks' to={item.link}>
+    <NavLink
+      key={i}
+      exact
+      activeClassName="active"
+      className="NavLinks"
+      to={item.link}
+    >
       <Typography>{item.text}</Typography>
     </NavLink>
   );
 
   const showItems = () =>
+    user.login &&
     data.map((item, i) => {
-      if (i < 4) return element(item, i);
+      if (user.login.isAuth) {
+        return !item.exclude && element(item, i);
+      } else {
+        return !item.restricted && element(item, i);
+      }
     });
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -43,15 +55,14 @@ function Navs() {
       transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMenuOpen}
       onClose={handleMenuClose}
-      
     >
-      <Link className='accountLink' to="/user">
+      <Link className="accountLink" to="/user">
         <MenuItem onClick={handleMenuClose}>My Profile</MenuItem>
       </Link>
-      <Link className='accountLink' to="/login">
+      <Link className="accountLink" to="/login">
         <MenuItem onClick={handleMenuClose}>Login</MenuItem>
       </Link>
-      <Link className='accountLink' to="/user/logout">
+      <Link className="accountLink" to="/user/logout">
         <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
       </Link>
     </Menu>
@@ -74,4 +85,8 @@ function Navs() {
     </>
   );
 }
-export default Navs;
+
+const mapStateToProps = state => ({
+  user: state.user
+});
+export default connect(mapStateToProps)(Navs);

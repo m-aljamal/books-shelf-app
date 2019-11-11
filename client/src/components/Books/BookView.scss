@@ -1,0 +1,32 @@
+.BookView_container {
+  max-width: 56vmax;
+  height: 80vh;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  margin-top: 30px;
+
+  .BookView_img {
+    width: 35%;
+    @media (max-width: 960px) {
+      width: 50%;
+    }
+    
+
+    img {
+      width: 100%;
+      height: 65%;
+    }
+  }
+  .BookView_bookInfo {
+    width: 70%;
+    margin-left: 20px;
+    font-family: "ZCOOL XiaoWei", serif;
+    font-size: 1.5rem;
+    @media (max-width: 960px) {
+      width: 50%;
+      font-size: 1.2rem;
+    }
+   
+  }
+}

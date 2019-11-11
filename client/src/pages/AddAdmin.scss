@@ -1,0 +1,26 @@
+.AddAdmin_container {
+  width: 95%;
+  margin: 30px auto 0 auto;
+
+  .Add_Admin_formContaint {
+    width: 90%;
+    margin: auto;
+
+    .Addadmin_button {
+      text-align: center;
+      .AddAdmin_button {
+        width: 23%;
+        background-color: #00897b;
+      }
+    }
+  }
+  .current_users {
+    width: 90%;
+    margin: 30px auto 0 auto;
+  }
+
+  .Addadmin_error {
+    margin-top: 20px;
+    color: red;
+  }
+}

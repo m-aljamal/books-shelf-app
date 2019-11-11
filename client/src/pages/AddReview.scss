@@ -1,0 +1,40 @@
+.article_container {
+  h2 {
+    text-align: center;
+  }
+
+  width: 50%;
+  height: 110vh;
+  margin: 30px auto 0 auto;
+  .AddReview_button_container {
+    text-align: center;
+    .AddReview_button {
+      background-color: #00897b;
+      width: 50%;
+      &:hover {
+        background-color: #00897b;
+      }
+    }
+    .delete_post {
+      margin-top: 10px;
+      .Delete_button {
+        background-color: red;
+        width: 50%;
+      }
+    }
+  }
+  
+}
+
+.edit_confirm {
+  margin: 20px auto;
+  text-align: center;
+  color: white;
+  background-color: green;
+  width: 354px;
+  border-radius: 10px;
+
+  .edit_confirem_link{
+    color: rgb(0, 0, 0)
+  }
+}

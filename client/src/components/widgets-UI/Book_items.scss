@@ -1,0 +1,35 @@
+.Book_items_container {
+  width: 100%;
+  height: 50vh;
+  box-sizing: border-box;
+  .Book_items_img {
+    width: 100%;
+    height: 30vh;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .Book_items_containt {
+    font-family: "ZCOOL XiaoWei", serif;
+    height: 20vh;
+    .Book_items_title {
+      height: 60%;
+      text-align: center;
+      h4 {
+        font-size: 1.2rem;
+      }
+    }
+    .Book_items_footer {
+       
+      height: 40%;
+      background-color: #00695c;
+      color: white;
+      p{
+          margin: 5px;
+      }
+     
+    }
+  }
+}

@@ -20,7 +20,7 @@ const data = [
     icon: <SupervisorAccountIcon />,
     text: "Add Admins",
     link: "/user/register",
-    restricted: false
+    restricted: true
   },
 
   {
@@ -28,35 +28,36 @@ const data = [
     icon: <RateReviewIcon />,
     text: "My Reviews",
     link: "/user/user-reviews",
-    restricted: false
+    restricted: true
   },
   {
     type: "navItem",
     icon: <AddIcon />,
     text: "Add Reviews",
     link: "/user/add",
-    restricted: false
+    restricted: true
   },
   {
     type: "navItem",
     icon: <AccountBoxIcon />,
     text: "My Profile",
     link: "/user",
-    restricted: false
+    restricted: true
   },
   {
     type: "navItem",
     icon: <InputIcon />,
     text: "Login",
     link: "/login",
-    restricted: false
+    restricted: false,
+    exclude: true
   },
   {
     type: "navItem",
     icon: <VpnKeyIcon />,
     text: "Logout",
     link: "/user/logout",
-    restricted: false
+    restricted: true
   }
 ];
 export default data;
