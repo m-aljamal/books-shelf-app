@@ -25,7 +25,7 @@ function App() {
           <Route exact path="/user/add" component={Auth(AddReview, true)} />
           <Route exact path="/user/edit-post/:postId" component={Auth(EditReviews, true)} />
           <Route exact path="/user/user-reviews" component={Auth(UserReviews, true)} />
-          <Route exact path="/user/register" component={Auth(AddAdmin, true)} />
+          <Route exact path="/user/register" component={AddAdmin} />
           <Route exact path="/user/logout" component={Auth(Logout, true)} />
         </Switch>
       </Layout>

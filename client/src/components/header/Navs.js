@@ -24,13 +24,13 @@ function Navs({ user }) {
   );
 
   const showItems = () =>
-    user.login &&
+   
     data.map((item, i) => {
-      if (user.login.isAuth) {
+     
         return !item.exclude && element(item, i);
-      } else {
-        return !item.restricted && element(item, i);
-      }
+     
+        
+    
     });
 
   const [anchorEl, setAnchorEl] = React.useState(null);
