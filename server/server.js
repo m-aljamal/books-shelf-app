@@ -13,8 +13,7 @@ mongoose.connect(config.DATABASE, {
 app.use(bodyParser.json()); // we are using json data
 app.use(cookieParser()); // for using cookies
 
-// for heroku 
-app.use(express.static('client/build'))
+
  
 
 
@@ -27,14 +26,7 @@ require("./routes/user")(app);
 // ! End user routes
 
 
-// for heroku 
 
-if(process.env.NODE_ENV === 'production') {
-  const path = require('path')
-  app.get('/*',(req, res)=>{
-    res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'))
-  })
-}
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
   console.log(`start server at ${port}`);
